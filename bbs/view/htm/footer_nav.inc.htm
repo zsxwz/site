@@ -1,0 +1,31 @@
+<footer class="text-muted small bg-dark py-4 mt-3" id="footer">
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129184983-6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129184983-6');
+</script>
+  
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<!--{hook footer_footer_left_start.htm}-->
+				© 2019<a href="https://zsxwz.com/" target="_blank" class="text-muted"><b> zsxwz</b></a>
+				<!--{hook footer_footer_left_end.htm}-->
+			</div>
+          
+         
+			
+          <div class="col text-right">
+				<!--{hook footer_footer_right_start.htm}-->
+				处理: <b><?php echo substr(microtime(1) - $starttime, 0, 5);?></b>, SQL: <b><?php echo count($db->sqls);?></b>
+				<!--{hook footer_footer_right_end.htm}-->
+			</div>
+          
+		</div>
+	</div>
+</footer>
