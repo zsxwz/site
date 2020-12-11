@@ -1,0 +1,12 @@
+<!-- 代码高亮 -->
+<?php $setting = setting_get('Last_highlight'); ?>
+<link rel="stylesheet" type="text/css" href="plugin/Last_highlight/styles/<?php echo $setting['view']; ?>.css?v1.0"/>
+<script src="plugin/Last_highlight/js/highlight.pack.js?v2.0"></script>
+<script>
+	$(function(){
+		if ("<?php echo $setting['fold']; ?>" == "on"){
+			$("code").animate({maxHeight:'320px'}); // 开启折叠
+			$("code").click(function() { $(this).animate({maxHeight:'100%'},"slow"); }); // 点击展开
+		}
+	});
+</script>

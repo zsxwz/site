@@ -1,0 +1,14 @@
+{
+    "name": "【自丢网】SEO优化上一篇下一篇",
+    "brief": "<a href='http://www.zidiu.com' target='_blank'>【自丢网zidiu.com】</a>插件模板开发修改/网站维护以及建站过程中如有任何问题请联系【技术维护】<a href='http://wpa.qq.com/msgrd?v=3&uin=515138&site=qq&menu=yes' target='_blank'>QQ：515138</a>",
+    "version": "1.1",
+    "bbs_version": "4.0",
+    "installed": 1,
+    "enable": 1,
+    "hooks_rank": {
+        "thread_plugin_before.htm": -100,
+        "thread_user_after.htm": -100
+    },
+    "overwrites_rank": [],
+    "dependencies": []
+}

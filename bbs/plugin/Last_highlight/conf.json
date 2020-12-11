@@ -1,0 +1,11 @@
+{
+    "name": "Highlight 代码高亮",
+    "brief": "基于 highlight.js 制作的代码高亮插件, 内置70余套主题风格可选, 支持对标准格式编辑器的解析(markdown和富文本), 额外增加了对 xn_umeditor 百度编辑器的支持",
+    "version": "2.0",
+    "bbs_version": "4.0",
+    "installed": 1,
+    "enable": 1,
+    "hooks_rank": [],
+    "overwrites_rank": [],
+    "dependencies": []
+}

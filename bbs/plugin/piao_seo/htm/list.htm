@@ -1,0 +1,61 @@
+<?php include _include(ADMIN_PATH.'view/htm/header.inc.htm');?>
+<style type="text/css">
+.card-title .alert{float: right;font-size: 75% !important;padding: 0.15rem !important;margin:0;cursor:pointer;}
+.table {
+    height: 400px;
+    background-color: #beceeb;
+}
+</style>
+<div class="row">
+    <div class="col-lg-10 offset-lg-1">
+        <div class="card">
+            <div class="card-block">
+
+
+                    <div class="card-title">关键词///替换词<span class="alert alert-success add">提示：多个关键词以换行分隔,为了兼容Linux和win第一行不替换</span></div>
+                    <div class="table-responsive arrlist">
+                        <table class="table" style="min-width: 800px;height: 500px;">
+<?php
+function characet($data){
+  if( !empty($data) ){    
+    $fileType = mb_detect_encoding($data , array('UTF-8','GBK','LATIN1','BIG5')) ;   
+    if( $fileType != 'UTF-8'){   
+      $data = mb_convert_encoding($data ,'utf-8' , $fileType);   
+    }   
+  }   
+  return $data;    
+}
+if(isset($_POST['content'])){
+file_put_contents(APP_PATH.'\plugin\piao_seo\seo.txt', characet($_POST['content']));
+echo  "更新数据成功".rand(1, 99999);
+}
+if(file_exists(APP_PATH.'\plugin\piao_seo\seo.txt'))  
+{  
+$string=file(APP_PATH.'\plugin\piao_seo\seo.txt');
+//$string=characet($string);
+}  
+else  
+{  
+//$string="///<br>";
+$string=characet(" ///<a href=http://cnde.net>cnde</a>");
+}  
+?>
+<form action="" method="POST">
+<textarea name="content" id="content" class="table" style="min-width: 800px" >
+<?php
+for ($i=0;$i<count($string);$i++){
+  echo  $string[$i]."";
+}
+//echo  "<br> ///<a href=http://cnde.net>cnde</a>";
+ ?>
+</textarea>
+<input type="submit" name="Submit" class="btn btn-primary btn-block" id="submit" data-loading-text="正在提交..." value="提交" />
+</form>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php include _include(ADMIN_PATH.'view/htm/footer.inc.htm');?>

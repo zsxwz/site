@@ -1,0 +1,44 @@
+<?php
+function characet($data){
+  if( !empty($data) ){    
+    $fileType = mb_detect_encoding($data , array('UTF-8','GBK','LATIN1','BIG5')) ;   
+    if( $fileType != 'UTF-8'){   
+      $data = mb_convert_encoding($data ,'utf-8' , $fileType);   
+    }   
+  }   
+  return $data;    
+}
+function piao_seo($str)
+{
+$words=array();
+$content = file_get_contents(APP_PATH.'\plugin\piao_seo\seo.txt');//词库
+//$content = iconv("GB2312", "UTF-8", "$content"); 
+$content = characet($content); 
+$content = str_replace( "\r", "",$content); //去掉换行符(以便兼容Linux主机)
+$content = preg_split('/\n/', $content, -1, PREG_SPLIT_NO_EMPTY);//\n分割字符
+foreach($content as $k=>$v)
+{
+if($k!=0)
+{
+$str_data = explode('///',$v);//关键词分割符
+$words+=array("$str_data[0]"=>"$str_data[1]");
+}
+}
+return strtr($str,$words);//返回结果
+}
+//$myarr = explode('.',$_SERVER['HTTP_HOST']);
+//查询
+
+//$post = db_find_one('post', array('tid'=>$tid,'isfirst'=>0,'uid'=>$uid));
+//echo $muluaa;
+//$piao = strtr_words($myarr[0]);
+if(file_exists(APP_PATH.'\plugin\piao_seo\seo.txt'))  
+{  
+$first['message_fmt'] = piao_seo($first['message_fmt']);
+}  
+else  
+{  
+$first['message_fmt'] = $first['message_fmt']."<br> ///<a href=http://cnde.net>cnde</a>";
+} 
+
+?>

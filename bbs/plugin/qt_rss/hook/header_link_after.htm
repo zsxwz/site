@@ -1,0 +1,3 @@
+<?php $rss_route = ($route == 'index' || $route == 'forum') ? $route : 'index'; ?>
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php echo url($rss_route.'-'.$fid); ?>?rss=1" />
+	<link rel="alternate" type="application/rdf+xml" title="RSS 1.0" href="<?php echo url($rss_route.'-'.$fid); ?>?rss=1" />

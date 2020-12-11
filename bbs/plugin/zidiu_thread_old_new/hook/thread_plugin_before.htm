@@ -1,0 +1,13 @@
+<!--自丢网www.zidiu.com/技术维护QQ：515138-->
+<br/>
+<?php
+$arrlist_n = db_find_one('thread', array('fid'=>$fid, 'tid'=>array('>'=>$tid)), array('tid'=>1));
+$arrlist_p = db_find_one('thread', array('fid'=>$fid, 'tid'=>array('<'=>$tid)), array('tid'=>-1));
+if($arrlist_p){
+echo '上一篇：'.'<a href="'.url("thread-".$arrlist_p['tid']).'" target="_blank" title="'.$arrlist_p['subject'].'" alt="'.$arrlist_p['subject'].'"><span>'.$arrlist_p['subject'].'</span></a>'.'<br/>';
+}else{echo '<span>上一篇：没了</span>';}
+if($arrlist_n){
+echo '下一篇：'.'<a href="'.url("thread-".$arrlist_n['tid']).'" target="_blank" title="'.$arrlist_n['subject'].'" alt="'.$arrlist_n['subject'].'"><span>'.$arrlist_n['subject'].'</span></a>'.'<br/>';
+}else{echo '<span>下一篇：没了</span>';}
+?>
+

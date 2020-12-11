@@ -1,0 +1,11 @@
+{
+    "name": "RSS",
+    "brief": "RSS 输出首页和版块的主题。支持 RSS1.0 和 RSS2.0",
+    "version": "1.0",
+    "bbs_version": "4.0",
+    "installed": 1,
+    "enable": 1,
+    "hooks_rank": [],
+    "overwrites_rank": [],
+    "dependencies": []
+}

@@ -1,0 +1,10 @@
+{
+    "name": "快捷回复表情",
+    "brief": "使用快捷回复时增加表情支持。在黑色寓言的QQ表情的基础上修正一切BUG。</br>1、所有文件采用HOOK；</br>2、支持高级回复和主题的表情过滤。</br>3、官方变量和HOOK不变的情况下，理论支持4.0以后的所有版本。",
+    "version": "1.0",
+    "bbs_version": "4.0",
+    "installed": 1,
+    "enable": 1,
+    "hooks_rank": [],
+    "dependencies": []
+}

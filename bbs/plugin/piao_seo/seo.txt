@@ -1,0 +1,6 @@
+www.cnde.net
+百度///<a href=?search-百度.htm>百度</a>
+谷歌///<a href=?search-谷歌.htm>谷歌</a>
+360///<a href=?search-360.htm>360</a>
+关键词///<a href=?search-关键词.htm>关键词</a>
+

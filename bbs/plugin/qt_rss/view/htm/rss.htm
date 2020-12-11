@@ -1,0 +1,36 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>
+<rss version="2.0"
+xmlns:content="http://purl.org/rss/1.0/modules/content/"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+xmlns:atom="http://www.w3.org/2005/Atom"
+xmlns:wfw="http://wellformedweb.org/CommentAPI/">
+<channel>
+<title><?php echo $header['title']; ?></title>
+<link></link>
+<atom:link href="" rel="self" type="application/rss+xml" />
+<language><?php echo $conf['lang']; ?></language>
+<description><?php echo $header['description']; ?></description>
+<?php $latest = reset($threadlist); ?>
+<lastBuildDate><?php echo date(DATE_RSS, $latest['last_date']); ?></lastBuildDate>
+<pubDate><?php echo date(DATE_RSS, $latest['last_date']); ?></pubDate>
+<?php foreach($threadlist as &$thread) { ?>
+<item>
+<title><?php echo $thread['subject']; ?></title>
+<link><?php echo url('thread-'.$thread['tid']); ?></link>
+<guid><?php echo url('thread-'.$thread['tid']); ?></guid>
+<pubDate><?php echo date(DATE_RSS, $thread['last_date']); ?></pubDate>
+<dc:creator><?php echo $thread['username']; ?></dc:creator>
+<description><![CDATA[
+<?php echo $thread['subject']; ?>
+]]></description>
+<content:encoded xml:lang="<?php echo $conf['lang']; ?>"><![CDATA[
+<?php echo $thread['subject']; ?>
+]]></content:encoded>
+<slash:comments><?php echo $thread['posts']; ?></slash:comments>
+<comments><?php echo url('thread-'.$thread['tid']); ?></comments>
+<wfw:commentRss><?php echo url('thread-'.$thread['tid']); ?></wfw:commentRss>
+</item>
+<?php } ?>
+</channel>
+</rss>

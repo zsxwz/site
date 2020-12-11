@@ -1,0 +1,11 @@
+{
+    "name": "关键词替换插件",
+    "brief": "关键词替换插件<br><span class='small text-success'><a href='http://www.cnde.net' target='_blank'>作者主页</a></span>",
+    "version": "1.0",
+    "bbs_version": "4.0",
+    "installed": 1,
+    "enable": 1,
+    "hooks_rank": [],
+    "overwrites_rank": [],
+    "dependencies": []
+}
